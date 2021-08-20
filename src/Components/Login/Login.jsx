@@ -4,7 +4,6 @@ import brand from '../Images/logo.png';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
 import googleIcon from '../Images/google-logo.svg';
-import { Button, ButtonGroup, Card, Col, Form, Row } from 'react-bootstrap';
 
 // firebase imported files
 import "firebase/auth";
@@ -108,45 +107,111 @@ export default function Login() {
   }
 
 
-  //css
-  const brandImg = { width: "7rem" };
-  const linkCss = { textDecoration: "none", color: "#4f4f4f", cursor: "pointer" };
-  const cardBody = {
-    borderRadius: ".2rem", padding: "1rem", border: "0", background: "rgba(255,255,255,0.8)",
-    boxShadow: "10px 10px 20px -6px rgba(0,0,0,0.3)"
-  };
-  const titleBtn = { textDecoration: 'inherit', color: "white", backgroundColor: "#4f4f4f", border: "none", fontWeight: "500" };
-  const or = { textAlign: "center", borderBottom: "1px solid #b4b4b4", lineHeight: "0.1rem", margin: "10px 0 20px" }
-  const span = { background: "#fff", padding: "0 10px" };
-  const socialBtn = { width: "1.5rem", backgroundColor: "#fff", borderRadius: "50%" }
-  const SocialCol = {
-    backgroundColor: "#4f4f4f", borderRadius: ".2rem", textAlign: "center", cursor: "pointer", color: "#fff",
-    padding: ".3rem", margin: "0 1rem", border: "none"
-  }
-
-
-
   return (
-    <div className="container">
+    <div className="container py-20 ">
+      <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full space-y-8">
+          <div>
+            <img className="mx-auto h-12 w-auto" src={brand} alt="Workflow" />
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-700">{newUser ? 'Sign up to your account' : 'Sign in to your account'}</h2>
+          </div>
+          <form onsubmit={handleSubmit} className="mt-8 space-y-6" action="#" method="POST">
+            <input type="hidden" name="remember" defaultValue="true" />
+            <div className="rounded-md shadow-sm -space-y-px">
+              {newUser &&
+                <div>
+                  <label htmlFor="email-address" className="sr-only">
+                    Name
+                  </label>
+                  <input
+                    onBlur={handleBlur}
+                    id="name"
+                    name="name"
+                    type="text"
+                    autoComplete="name"
+                    required
+                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    placeholder="enter full name"
+                  />
+                </div>
+              }
+              <div>
+                <label htmlFor="email-address" className="sr-only">
+                  Email address
+                </label>
+                <input
+                  onBlur={handleBlur}
+                  id="email-address"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Email address"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="sr-only">
+                  Password
+                </label>
+                <input
+                  onBlur={handleBlur}
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="Password"
+                />
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="flex items-center">
+                <input
+                  id="remember-me"
+                  name="remember-me"
+                  type="checkbox"
+                  className="h-4 w-4 text-red-400 rounded"
+                />
+                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-600">
+                  Remember me
+                </label>
+              </div>
+              {!newUser ?
+                <div className="text-sm">
+                  <Link to="" className="font-medium text-red-400 hover:text-red-500">
+                    Forgot your password?
+                  </Link>
+                </div>
+                : ' '
+              }
+            </div>
+
+            <div className="group relative  flex justify-around ">
+              <button onClick={() => setNewUser(!newUser)} type="submit" className=" flex-1 py-2 px-4 mr-1 font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none ">
+                Sign In
+              </button>
+
+              <button onClick={() => setNewUser(newUser)} type="submit" className=" flex-1 py-2 px-4 ml-1 font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
+                Sign Up
+              </button>
+            </div>
+          </form>
+          {/* googleSignIn */}
+          <button onClick={GoogleSignIn} className="flex w-full py-2 px-2 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none border ">
+            <img className="mx-auto h-6 mr-3 rounded" src={googleIcon} alt="Workflow" /> Google
+          </button>
+        </div>
+      </div>
+
+
+      {/* 
       <Row className="justify-content-center">
         <Col md={4} style={cardBody}>
           <Form onSubmit={handleSubmit}>
-            <Card.Title className="text-center mb-3"><img src={brand} style={brandImg} alt="" /></Card.Title>
-            <Form.Group controlId="formBasicEmail formBasicPassword">
-              {newUser && <Form.Control onBlur={handleBlur} className="mb-3" name="name" type="text" placeholder="Your full name" required />}
-              <Form.Control onBlur={handleBlur} className="mb-3" name="email" type="text" placeholder="Enter email" required />
-              <Form.Control onBlur={handleBlur} className="mb-3" name="password" type="password" placeholder="Password" required />
-            </Form.Group>
 
-            {!newUser ?
-              <Row className=" gap-4 mb-2">
-                <Col><Form.Check type="checkbox" label="Remember me" /></Col>
-                <Col><Link to="*" ><Form.Label style={linkCss}>Forget password?</Form.Label></Link></Col>
-              </Row> : ''}
-
-            <ButtonGroup className="d-grid gap-2 mb-2">
-              <Button type="submit" size="md" style={titleBtn}>{newUser ? 'Sign up' : 'Sign in'}</Button>
-            </ButtonGroup>
             <Row>
               <Col> <Card.Text className="text-center mb-3">{newUser ? 'Already have account?' : "Don't have account?"}</Card.Text></Col>
               <Col><Card.Text className="text-center mb-3" onClick={() => setNewUser(!newUser)} style={linkCss} htmlFor="newUser" name="newUser">
@@ -161,7 +226,9 @@ export default function Login() {
           <Card.Text style={{ color: "red" }} className="text-center mt-3">{user.error}</Card.Text>
           {user.success && <Card.Text style={{ color: "green" }} className="text-center mt-3">User {newUser ? 'created' : 'Logged In'}  successfully</Card.Text>}
         </Col>
-      </Row>
+      </Row> */}
+
+
     </div>
   );
 };

@@ -74,7 +74,7 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6 mt-8 md:mt-0">
+                        <div className="px-4 mt-4 sm:w-1/3 xl:w-1/6 sm:mx-auto xl:mt-0 xl:ml-auto">
                             <h5 className="text-xl text-red-400 font-bold mb-6 sm:text-center xl:text-left">Stay connected</h5>
                             <div className="flex sm:justify-center xl:justify-start">
                                 <Link to="" className="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 text-gray-50 hover:text-white hover:bg-red-400 ">
@@ -88,7 +88,7 @@ const Footer = () => {
                                 </Link >
                             </div>
                             <div className="py-3">
-                                <div className="flex ">
+                                <div>
                                     <label htmlFor="email-address" className="sr-only">  Email address  </label>
                                     <input
                                         id="email-address"
@@ -99,7 +99,7 @@ const Footer = () => {
                                         className=" rounded  block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
                                         placeholder="Email address"
                                     />
-                                    <button type="submit" className="py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none"> Subscribe</button>
+                                    <button type="submit" className="py-2 px-4 mt-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none"> Subscribe</button>
                                 </div>
                             </div>
                             <p className="text-gray-50 mb-6 sm:text-center xl:text-left">All rights reserved.</p>

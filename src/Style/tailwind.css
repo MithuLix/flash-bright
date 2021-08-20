@@ -1,15 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* .btn {
-    @apply font-medium py-2 px-4 rounded text-sm text-white;
-}
-
-.btn-red {
-    @apply bg-red-400 focus:outline-none border border-transparent flex justify-center py-2 px-4 ; 
-}
-
-.btn-red:hover {
-    @apply bg-red-500;
-} */
