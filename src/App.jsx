@@ -12,6 +12,9 @@ import Gallery from './Components/Gallery/Gallery';
 import Blog from './Components/Blog/Blog';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
+import AddService from './Components/AdminPanel/AddService/AddService';
+import ManageServiceCard from './Components/AdminPanel/ManageServices/ManageServiceCard';
+import OrderList from './Components/AdminPanel/OrderList/OrderList';
 export const UserContext = createContext();
 
 
@@ -26,25 +29,29 @@ function App() {
 
           <Switch>
             <Route exact path="/"><MainPage /></Route>
-
             <Route path="/home"><Home /></Route>
-
             <Route path="/gallery"><Gallery /></Route>
-
             <Route path="/services"><Services /></Route>
-
             <Route path="/blog"><Blog /></Route>
-
             <Route path="/contact"><Contact /></Route>
-
             <Route path="/login"><Login /></Route>
 
-            {/* <PrivateRoute path="/"></PrivateRoute> */}
+            {/* booking components 
+            <PrivateRoute path="/booking/:id"><Booking /></PrivateRoute>
+            <PrivateRoute path="/bookingMain"><Booking /></PrivateRoute>
+            <PrivateRoute path="/bookingPayment"><BookingPayment /></PrivateRoute>
+            <PrivateRoute path='/bookingList'><BookingList /></PrivateRoute>
+            <PrivateRoute path='/addReview'><AddReview /></PrivateRoute>*/}
+
+            {/* admin components */}
+            <Route path='/orderList'><OrderList /></Route>
+            <Route path='/addService'><AddService/></Route>
+            <Route path='/manageServices'><ManageServiceCard/></Route>
 
             <Route path="*"><NoMatch /></Route>
           </Switch>
-          
-          <Footer/>
+
+          <Footer />
         </Router>
       </UserContext.Provider>
     </div>

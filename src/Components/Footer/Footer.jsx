@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className="bottom-0 ">
+        <div className="bottom-0">
             <footer className="footer-1 bg-gray-600 py-8 sm:py-12">
                 <div className="container mx-auto px-4">
                     <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
@@ -102,7 +102,7 @@ const Footer = () => {
                                     <button type="submit" className="py-2 px-4 mt-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none"> Subscribe</button>
                                 </div>
                             </div>
-                            <p className="text-gray-50 mb-6 sm:text-center xl:text-left">All rights reserved.</p>
+                            <p className="text-gray-50 sm:text-center xl:text-left">All rights reserved.</p>
                         </div>
                     </div>
 

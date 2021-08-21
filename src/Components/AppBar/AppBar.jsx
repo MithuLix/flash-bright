@@ -18,7 +18,7 @@ export default function AppBar() {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const user = firebase.auth().currentUser;
     return (
-        <div className="sticky top-0 z-50">
+        <div className="sticky w-full">
             <Disclosure as="nav" className="bg-gray-600">
                 {({ open }) => (
                     <>
@@ -26,7 +26,7 @@ export default function AppBar() {
                             <div className="relative flex items-center justify-between h-16">
                                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                     {/* Mobile menu button*/}
-                                    <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
+                                    <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-red-400 hover:bg-gray-700 focus:outline-none">
                                         <span className="sr-only">Open main menu</span>
                                         {open ? (
                                             <XIcon className="block h-6 w-6" aria-hidden="true" />
@@ -47,11 +47,11 @@ export default function AppBar() {
                                     </div>
                                     <div className="hidden sm:block sm:ml-6">
                                         <div className="flex  space-x-4">
-                                            <Link to="/home"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Home</p></Link>
-                                            <Link to="/gallery"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Gallery</p></Link>
-                                            <Link to="/services"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Services</p></Link>
-                                            <Link to="/blog"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Blog</p></Link>
-                                            <Link to="/contact"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Contact</p></Link>
+                                            <Link to="/home"><p className="text-white  hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Home</p></Link>
+                                            <Link to="/gallery"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Gallery</p></Link>
+                                            <Link to="/services"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Services</p></Link>
+                                            <Link to="/blog"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Blog</p></Link>
+                                            <Link to="/contact"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Contact</p></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -82,11 +82,11 @@ export default function AppBar() {
 
                         <Disclosure.Panel className="sm:hidden">
                             <div className="px-2 pt-2 pb-3 space-y-1">
-                                <Link to="/home"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Home</p></Link>
-                                <Link to="/gallery"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Gallery</p></Link>
-                                <Link to="/services"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Services</p></Link>
-                                <Link to="/blog"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Blog</p></Link>
-                                <Link to="/contact"><p className="text-red-400 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium"> Contact</p></Link>
+                                <Link to="/home"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Home</p></Link>
+                                <Link to="/gallery"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Gallery</p></Link>
+                                <Link to="/services"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Services</p></Link>
+                                <Link to="/blog"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Blog</p></Link>
+                                <Link to="/contact"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Contact</p></Link>
                                 {user ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" /> : <Link to="/login"><FontAwesomeIcon className="h-8 w-8 rounded-full" icon={faUserAlt} /></Link>}
                             </div>
                         </Disclosure.Panel>
