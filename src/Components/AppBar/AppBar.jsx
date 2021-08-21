@@ -17,12 +17,14 @@ if (firebase.apps.length === 0) { firebase.initializeApp(firebaseConfig) };
 export default function AppBar() {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const user = firebase.auth().currentUser;
+
+
     return (
-        <div className="sticky w-full">
-            <Disclosure as="nav" className="bg-gray-600">
+        <div style={{backgroundColor: '#485264f7'}}>
+            <Disclosure as="nav"  >
                 {({ open }) => (
                     <>
-                        <div className="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8">
+                        <div className="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8 mt-0 fixed w-full z-10 top-0" style={{backgroundColor: '#485264f7'}}>
                             <div className="relative flex items-center justify-between h-16">
                                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                     {/* Mobile menu button*/}
@@ -47,10 +49,11 @@ export default function AppBar() {
                                     </div>
                                     <div className="hidden sm:block sm:ml-6">
                                         <div className="flex  space-x-4">
-                                            <Link to="/home"><p className="text-white  hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Home</p></Link>
-                                            <Link to="/services"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Services</p></Link>
-                                            <Link to="/blog"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Blog</p></Link>
-                                            <Link to="/contact"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Contact</p></Link>
+                                            <Link to="/home"><p className="text-white  hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Home</p></Link>
+                                            <Link to="/services"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Services</p></Link>
+                                            <Link to="/bookingList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Bookings</p></Link>
+                                            <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>
+                                            <Link to="/contact"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Contact</p></Link>
                                         </div>
                                     </div>
                                 </div>
@@ -81,16 +84,19 @@ export default function AppBar() {
 
                         <Disclosure.Panel className="sm:hidden">
                             <div className="px-2 pt-2 pb-3 space-y-1">
-                                <Link to="/home"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Home</p></Link>
-                                <Link to="/services"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Services</p></Link>
-                                <Link to="/blog"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Blog</p></Link>
-                                <Link to="/contact"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Contact</p></Link>
+                                <Link to="/home"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Home</p></Link>
+                                <Link to="/services"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Services</p></Link>
+                                <Link to="/bookingList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Bookings</p></Link>
+                                <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>
+                                <Link to="/contact"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Contact</p></Link>
                                 {user ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" /> : <Link to="/login"><FontAwesomeIcon className="h-8 w-8 rounded-full" icon={faUserAlt} /></Link>}
                             </div>
                         </Disclosure.Panel>
                     </>
                 )}
             </Disclosure>
+            {/* padding bottom */}
+            <div className="pb-16"></div>
         </div>
     )
 }

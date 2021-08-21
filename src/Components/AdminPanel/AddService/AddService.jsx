@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, ButtonGroup, Form, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import AdminDrawer from '../AdminDrawer/AdminDrawer';
 const axios = require('axios').default;
@@ -38,21 +38,21 @@ export default function AddService() {
 
     return (
         <div className="md:container">
-            <div class="flex flex-wrap overflow-hidden">
+            <div className="flex flex-wrap overflow-hidden">
 
-                <div class="px-2 w-1/2 overflow-hidden xs:w-full sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+                <div className="px-2 w-1/2 overflow-hidden xs:w-full sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
                     <AdminDrawer />
                 </div>
 
-                <div class="px-4 py-4 w-1/2 overflow-hidden xs:w-full sm:w-full md:ml-12 md:w-1/2 lg:w-1/2 xl:w-1/2">
+                <div className="px-4 py-4 w-1/2 overflow-hidden xs:w-full sm:w-full md:ml-12 md:w-1/2 lg:w-1/2 xl:w-1/2">
                     <p className="text-2xl font-bold my-4" >Add a new Service</p>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input name="title" ref={register({ required: true })} className="bg-gray-200 p-3 my-2 w-full focus:bg-gray-50 rounded font-medium" type="text" placeholder="Enter title" />
-                        <textarea name="description" as="textarea" rows={6} ref={register({ required: true })} className="bg-gray-200 p-3 my-2 w-full focus:bg-gray-50 rounded font-medium" placeholder="Enter Description" />
+                        <input name="title" ref={register({ required: true })} className="bg-gray-200 p-3 my-2 w-full focus:bg-gray-50 rounded font-medium " type="text" placeholder="Enter title" />
+                        <textarea name="description" as="textarea" rows={6} ref={register({ required: true })} className="bg-gray-200 p-3 my-2 w-full focus:bg-gray-50 focus:outline-none focus:border-none  rounded font-medium" placeholder="Enter Description" />
                         <div className="flex flex-row justify-between">
-                            <input name="image" onChange={handleImage} ref={register({ required: true })} className="bg-gray-200 p-3 my-2 focus:bg-gray-50 rounded font-medium" type="file" />
-                            <input name="price" ref={register({ required: true })} className="bg-gray-200 p-3 my-2 focus:bg-gray-50 rounded font-medium" type="number" placeholder="Enter price" />
+                            <input name="price" ref={register({ required: true })} className="bg-gray-200 p-3 my-2 focus:bg-gray-50 rounded font-medium " type="number" placeholder="Enter price" />
+                            <input name="image" onChange={handleImage} ref={register({ required: true })} className="bg-gray-200 p-3 my-2 focus:bg-gray-50 rounded font-medium xs:ml-4" type="file" />
                         </div>
                         {imageURL && <strong >Image uploaded successfully. <br /></strong>}
 
@@ -62,11 +62,6 @@ export default function AddService() {
                     </form>
                 </div>
             </div>
-            {/* modal */}
-            <modal show={modal} onHide={() => setModal(false)} centered>
-                <body><h6>Service added successfully.</h6></body>
-                <footer><button className="text-gray-500 hover:text-gray-600" onClick={() => setModal(false)}>Close</button></footer>
-            </modal>
         </div>
     );
 };

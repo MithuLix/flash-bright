@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Spinner } from 'react-bootstrap';
 import ServicesCard from './ServicesCard';
 
 const Services = () => {
@@ -14,10 +13,10 @@ const Services = () => {
 
     return (
         <div className="container">
-            <p className="text-left py-6 text-4xl font-bold text-gray-700">Our services</p>
-            <section className="g-4 mt-3">
-                {spinner && <div className="text-center"> <Spinner animation="border" variant="secondary" /></div>}
-            </section>
+            <p className="text-center py-6 pb-12 text-5xl font-bold text-white">Our Best Services</p>
+            <div class=" flex justify-center items-center">
+                {spinner && <div class="animate-spin rounded-full h-32 w-32 border-b-4 border-white"></div>}
+            </div>
             <div className=" grid grid-cols-1 md:grid-cols-2 grid-flow-row auto-rows-max md:auto-rows-min gap-10 mb-20">
                 {services.map(service => <ServicesCard service={service} key={service._id}></ServicesCard>)}
             </div>

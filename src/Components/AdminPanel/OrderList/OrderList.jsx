@@ -1,47 +1,44 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Spinner, Table } from 'react-bootstrap';
+import AdminDrawer from '../AdminDrawer/AdminDrawer';
 import OrderListCard from './OrderListCard';
 
 
-export default function OrderList () {
+export default function OrderList() {
     const [orderLists, setOrderLists] = useState([]);
     const [toggle, setToggle] = useState(false);
     const [spinner, setSpinner] = useState(true);
-    
+
     useEffect(() => {
-        fetch('http://localhost:5000/allOrderList')
-        .then(res => res.json())
-        .then(data => { setOrderLists(data); setSpinner(false)})
+        fetch('http://localhost:5000/allOrders')
+            .then(res => res.json())
+            .then(data => { setOrderLists(data); setSpinner(false) })
     }, [toggle]);
 
-    //css
-    const book = { backgroundColor:"#f1f1f1"};
-    const h6 = { margin:"0", padding:"1rem", backgroundColor:"#fff"};
-    const halfCol  ={lineHeight:"1.2rem",  background: "rgba(255,255,255,0.8)",
-                boxShadow: "10px 10px 20px -6px rgba(0,0,0,0.2)", margin:"1rem", borderRadius:".5rem"}
 
-    
-return (
-    <div>
-        <Container>
-            <Row className="g-0">
-                <Col md={9}style={book}>
-                    <h6 style={h6}>ORDER LIST</h6>
-                    <Col style={halfCol} >
-                        <Table>
+    return (
+        <div className="md:container">
+            <div className="flex flex-wrap overflow-hidden">
+
+                <div className="px-2 w-1/2 overflow-hidden xs:w-full sm:w-full md:w-1/4 lg:w-1/4 xl:w-1/4">
+                    <AdminDrawer />
+                </div>
+
+                <div class="px-4 py-4 w-1/2 overflow-hidden xs:w-full sm:w-full md:ml-12 md:w-1/2 lg:w-1/2 xl:w-1/2">
+                <p className="text-2xl font-bold my-4" >Order List</p>
+                    <div>
+                        <table>
                             <thead><tr><th>Name</th> <th>Email ID</th><th>Destination</th><th>Status</th></tr> </thead>
                             <tbody>
-                                {orderLists.map(orderList => <OrderListCard toggle={toggle} setToggle = {setToggle} orderList={orderList} key={orderList._id}> </OrderListCard>)}
+                                {orderLists.map(orderList => <OrderListCard toggle={toggle} setToggle={setToggle} orderList={orderList} key={orderList._id}> </OrderListCard>)}
                             </tbody>
-                        </Table>
-                        <Row> 
-                            {spinner && <div className="text-center"> <Spinner animation="border" variant="secondary" /></div>} 
-                        </Row>
-                    </Col>
-                </Col>
-            </Row>
-        </Container>
-    </div>
+                        </table>
+                        <div class=" flex justify-center items-center">
+                            {spinner && <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-gray-700"></div>}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 

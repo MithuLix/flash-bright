@@ -1,0 +1,11 @@
+.home {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../Images//homebg.jpg");
+  box-shadow:inset 0 0 0 2000px #4c566891;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
