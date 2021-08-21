@@ -48,7 +48,6 @@ export default function AppBar() {
                                     <div className="hidden sm:block sm:ml-6">
                                         <div className="flex  space-x-4">
                                             <Link to="/home"><p className="text-white  hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Home</p></Link>
-                                            <Link to="/gallery"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Gallery</p></Link>
                                             <Link to="/services"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Services</p></Link>
                                             <Link to="/blog"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Blog</p></Link>
                                             <Link to="/contact"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Contact</p></Link>
@@ -83,7 +82,6 @@ export default function AppBar() {
                         <Disclosure.Panel className="sm:hidden">
                             <div className="px-2 pt-2 pb-3 space-y-1">
                                 <Link to="/home"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Home</p></Link>
-                                <Link to="/gallery"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Gallery</p></Link>
                                 <Link to="/services"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Services</p></Link>
                                 <Link to="/blog"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Blog</p></Link>
                                 <Link to="/contact"><p className="text-white hover:bg-gray-700 hover:text-red-400 px-3 py-2 rounded-md font-medium"> Contact</p></Link>

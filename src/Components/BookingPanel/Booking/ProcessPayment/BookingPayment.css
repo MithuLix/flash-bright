@@ -1,0 +1,10 @@
+
+label { color: #6b7c93; font-weight: 300; letter-spacing: 0.025em;}
+/* for datePicker */
+input {  padding: 6px; border: 0; outline: 0; border-radius: 4px;}
+
+.StripeElement { margin: 10px 3px; padding: 10px; border: 0; outline: 0; width:100%;
+  border-radius: 4px; background: white;
+}
+
+input::placeholder { color: #aab7c4;}

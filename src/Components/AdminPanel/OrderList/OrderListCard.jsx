@@ -11,7 +11,7 @@ export default function  OrderListCard ({toggle, setToggle, orderList }) {
     const handleChange =(value) => {setStatusChange(value)}
     
     useEffect(() => {
-        fetch(`https://travel-hub-server.herokuapp.com/updateOrder/${orderList._id}`, {
+        fetch(`http://localhost:5000/updateOrder/${orderList._id}`, {
             method : "PATCH",
             headers: {"Content-Type" : "application/json"},
             body : JSON.stringify({status:statusChange})

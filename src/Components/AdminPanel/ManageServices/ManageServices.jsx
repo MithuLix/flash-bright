@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Spinner, Table } from 'react-bootstrap';
-import SidebarAdminPanel from '../SidebarAdminPanel/SidebarAdminPanel';
+import AdminDrawer from '../AdminDrawer/AdminDrawer';
 import ManageDestinationCard from './ManageServiceCard';
 
 
 export default function ManageServices () {
-    const [manageDestinations, setManageDestinations] = useState([]);
+    const [manageServices, setManageService] = useState([]);
     const [spinner, setSpinner] = useState(true);
 
-    useEffect(() => { fetch("https://travel-hub-server.herokuapp.com/getDestinations")
+    useEffect(() => { fetch("http://localhost:5000/getServices")
         .then(res => res.json())
-        .then(data => {  setManageDestinations(data); setSpinner(false) })
+        .then(data => {  setManageService(data); setSpinner(false) })
     }, []);
 
     const book = { backgroundColor:"#f1f1f1",};
@@ -22,13 +22,13 @@ export default function ManageServices () {
     <div>
         <Container>
             <Row className="g-0">
-                <Col><SidebarAdminPanel/></Col>
+                <Col><AdminDrawer/></Col>
                 <Col md={9}style={book}>
                     <h6 style={h6}>MANAGE DESTINATIONS</h6>
                     <Col style={halfCol} >
                         <Table striped bordered hover size="sm">
                             <thead><tr><th>Name</th> <th>Price</th><th>Action</th></tr></thead>
-                            <tbody>{manageDestinations.map((destination) => <ManageDestinationCard destination={destination} key={destination._id}></ManageDestinationCard>)}</tbody>
+                            <tbody>{manageServices.map((destination) => <ManageDestinationCard destination={destination} key={destination._id}></ManageDestinationCard>)}</tbody>
                         </Table>
                         <Row> 
                             {spinner && <div className="text-center"> <Spinner animation="border" variant="secondary" /></div>} 

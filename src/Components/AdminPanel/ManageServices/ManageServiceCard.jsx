@@ -9,7 +9,7 @@ export default function ManageServiceCard (props) {
     const [modal, setModal] = useState(false);
 
     const handleDelete = id => {
-        fetch(`https://travel-hub-server.herokuapp.com/deleteDestination/${_id}`, { method: "DELETE" })
+        fetch(`http://localhost:5000/deleteService/${_id}`, { method: "DELETE" })
         .then(res => res.json())
         .then(data => { setModal(true);})};
 

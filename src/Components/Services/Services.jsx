@@ -13,11 +13,12 @@ const Services = () => {
     }, [])
 
     return (
-        <div className="container pt-16">
+        <div className="container">
+            <p className="text-left py-6 text-4xl font-bold text-gray-700">Our services</p>
             <section className="g-4 mt-3">
                 {spinner && <div className="text-center"> <Spinner animation="border" variant="secondary" /></div>}
             </section>
-            <div className="container h-64 grid grid-rows-3 grid-flow-col gap-4">
+            <div className=" grid grid-cols-1 md:grid-cols-2 grid-flow-row auto-rows-max md:auto-rows-min gap-10 mb-20">
                 {services.map(service => <ServicesCard service={service} key={service._id}></ServicesCard>)}
             </div>
         </div >

@@ -3,9 +3,10 @@ import React from 'react';
 const Contact = () => {
     return (
         <div className="container">
+            <p className="text-left py-8 text-4xl font-bold text-gray-700">Contact Us</p>
             <div className="grid grid-flow-col grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4">
 
-                <form className="pt-14">
+                <form>
                     <div className="flex flex-wrap -mx-3 mb-6">
                         <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label className="block text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -55,7 +56,7 @@ const Contact = () => {
                 </form>
 
                 <div class="w-full object-cover h-64 lg:w-full md:h-screen bg-cover bg-center"
-                    style={{backgroundImage: 'url(https://i.ibb.co/x8PhCWt/contact-Svg.png)'}}>
+                    style={{ backgroundImage: 'url(https://i.ibb.co/x8PhCWt/contact-Svg.png)' }}>
                 </div>
             </div>
         </div>
