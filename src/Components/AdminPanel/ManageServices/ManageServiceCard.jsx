@@ -9,7 +9,7 @@ export default function ManageServiceCard (props) {
     const [modal, setModal] = useState(false);
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/deleteService/${_id}`, { method: "DELETE" })
+        fetch(`https://flash-bright-backend.herokuapp.com/deleteService/${_id}`, { method: "DELETE" })
         .then(res => res.json())
         .then(data => { setModal(true);})};
 
@@ -28,10 +28,10 @@ return (
             </td>
         </tr>
         {/* modal */}
-        <Modal show={modal} onHide={()=>setModal(false)} centered>
+        {/* <Modal show={modal} onHide={()=>setModal(false)} centered>
             <Modal.Body><h6>{title} is deleted.</h6></Modal.Body>
             <Modal.Footer><Button variant="secondary btn-sm" onClick={()=> setModal(false)}>Close</Button></Modal.Footer>
-        </Modal>
+        </Modal> */}
     </>
     );
 };

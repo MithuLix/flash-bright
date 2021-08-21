@@ -9,7 +9,7 @@ const ServicesCard = (props) => {
 
             <img className="h-1/2 w-full sm:h-full sm:w-1/2 object-cover" src={imageURL} alt="" />
             <div className=" flex-1 w-full flex flex-col p-3  justify-around h-1/2  sm:h-full sm:items-baseline sm:w-1/2">
-                <h1 className="text-2xl font-medium mb-1 text-white break-normal md:break-all">{title}</h1>
+                <h1 className="text-lg font-medium mb-1 text-white break-normal md:break-all">{title}</h1>
                 <h1 className="font-medium text-lg text-gray-50 w-full py-1 px-2 my-1 rounded" >$ {price}</h1>
 
                 <div className="w-full flex justify-between ">

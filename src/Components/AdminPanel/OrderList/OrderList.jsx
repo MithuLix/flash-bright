@@ -9,7 +9,7 @@ export default function OrderList() {
     const [spinner, setSpinner] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allOrders')
+        fetch('https://flash-bright-backend.herokuapp.com/allOrders')
             .then(res => res.json())
             .then(data => { setOrderLists(data); setSpinner(false) })
     }, [toggle]);
@@ -24,16 +24,16 @@ export default function OrderList() {
                 </div>
 
                 <div class="px-4 py-4 w-1/2 overflow-hidden xs:w-full sm:w-full md:ml-12 md:w-1/2 lg:w-1/2 xl:w-1/2">
-                <p className="text-2xl font-bold my-4" >Order List</p>
+                <p className="text-2xl font-bold my-4 text-white" >Order List</p>
                     <div>
-                        <table>
-                            <thead><tr><th>Name</th> <th>Email ID</th><th>Destination</th><th>Status</th></tr> </thead>
+                    <table className="text-dark text-lg bg-gray-300 font-medium rounded w-full justify-center text-center ">
+                            <thead className="bg-gray-400"><tr><th>Name</th> <th>Email ID</th><th>Destination</th><th>Status</th></tr> </thead>
                             <tbody>
                                 {orderLists.map(orderList => <OrderListCard toggle={toggle} setToggle={setToggle} orderList={orderList} key={orderList._id}> </OrderListCard>)}
                             </tbody>
                         </table>
-                        <div class=" flex justify-center items-center">
-                            {spinner && <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-gray-700"></div>}
+                        <div class=" flex justify-center items-center py-6">
+                            {spinner && <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-white"></div>}
                         </div>
                     </div>
                 </div>

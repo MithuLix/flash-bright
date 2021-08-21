@@ -6,7 +6,7 @@ const Services = () => {
     const [spinner, setSpinner] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/getServices')
+        fetch('https://flash-bright-backend.herokuapp.com/getServices')
             .then((res) => res.json())
             .then(data => { setServices(data); setSpinner(false) })
     }, [])

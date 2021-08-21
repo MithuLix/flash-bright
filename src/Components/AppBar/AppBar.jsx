@@ -64,7 +64,7 @@ export default function AppBar() {
                                         <div>
                                             <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none">
                                                 <span className="sr-only">Open user menu</span>
-                                                {user ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" /> : <Link to="/login"><FontAwesomeIcon className="h-8 w-8 rounded-full" icon={faUser} /></Link>}
+                                                {user ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" /> : <Link to="/login"><FontAwesomeIcon className="text-2xl object-fill w-20  rounded-full bg-gray-200" icon={faUser} /></Link>}
                                             </Menu.Button>
                                         </div>
                                         <Transition
@@ -89,7 +89,6 @@ export default function AppBar() {
                                 <Link to="/bookingList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Bookings</p></Link>
                                 <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>
                                 <Link to="/contact"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Contact</p></Link>
-                                {user ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" /> : <Link to="/login"><FontAwesomeIcon className="h-8 w-8 rounded-full" icon={faUserAlt} /></Link>}
                             </div>
                         </Disclosure.Panel>
                     </>

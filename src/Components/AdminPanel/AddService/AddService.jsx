@@ -24,7 +24,7 @@ export default function AddService() {
     const onSubmit = data => {
         const addService = { title: data.title, price: data.price, imageURL: imageURL, description: data.description }
         if (imageURL) {
-            fetch('http://localhost:5000/addService', {
+            fetch('https://flash-bright-backend.herokuapp.com/addService', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(addService)
@@ -45,7 +45,7 @@ export default function AddService() {
                 </div>
 
                 <div className="px-4 py-4 w-1/2 overflow-hidden xs:w-full sm:w-full md:ml-12 md:w-1/2 lg:w-1/2 xl:w-1/2">
-                    <p className="text-2xl font-bold my-4" >Add a new Service</p>
+                    <p className="text-2xl font-bold my-4 text-white" >Add a new Service</p>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input name="title" ref={register({ required: true })} className="bg-gray-200 p-3 my-2 w-full focus:bg-gray-50 rounded font-medium " type="text" placeholder="Enter title" />
@@ -56,7 +56,7 @@ export default function AddService() {
                         </div>
                         {imageURL && <strong >Image uploaded successfully. <br /></strong>}
 
-                        <button type="submit" className="shadow bg-gray-500 hover:bg-gray-600 focus:shadow-outline focus:outline-none text-white font-bold py-3 px-6 my-2 rounded">
+                        <button type="submit" className="shadow bg-gray-600 hover:bg-gray-500 border focus:shadow-outline focus:outline-none text-white font-bold py-3 px-6 my-2 rounded">
                             Save to database
                         </button>
                     </form>

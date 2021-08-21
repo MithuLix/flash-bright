@@ -108,16 +108,16 @@ export default function Login() {
 
 
   return (
-    <div className="container py-20 ">
+    <div className="container py-20">
       <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
+        <div className="max-w-md w-full space-y-8  bg-gray-700 p-4 rounded">
           <div>
             <img className="mx-auto h-12 w-auto" src={brand} alt="Workflow" />
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-700">{newUser ? 'Sign up to your account' : 'Sign in to your account'}</h2>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-white">{newUser ? 'Sign up to your account' : 'Sign in to your account'}</h2>
           </div>
           <form onsubmit={handleSubmit} className="mt-8 space-y-6" action="#" method="POST">
             <input type="hidden" name="remember" defaultValue="true" />
-            <div className="rounded-md shadow-sm -space-y-px">
+            <div className="rounded-md shadow-sm -space-y-px ">
               {newUser &&
                 <div>
                   <label htmlFor="email-address" className="sr-only">
@@ -130,7 +130,7 @@ export default function Login() {
                     type="text"
                     autoComplete="name"
                     required
-                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    className="appearance-none  rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                     placeholder="enter full name"
                   />
                 </div>
@@ -175,7 +175,7 @@ export default function Login() {
                   type="checkbox"
                   className="h-4 w-4 text-red-400 rounded"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-600">
+                <label htmlFor="remember-me" className="ml-2 block text-sm text-white">
                   Remember me
                 </label>
               </div>
@@ -190,45 +190,21 @@ export default function Login() {
             </div>
 
             <div className="group relative  flex justify-around ">
-              <button onClick={() => setNewUser(!newUser)} type="submit" className=" flex-1 py-2 px-4 mr-1 font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none ">
+              <button onClick={() => setNewUser(!newUser)} type="submit" className=" flex-1 py-2 px-4 mr-1 font-medium rounded-md text-white bg-gray-700 hover:bg-gray-600 border focus:outline-none ">
                 Sign In
               </button>
 
-              <button onClick={() => setNewUser(newUser)} type="submit" className=" flex-1 py-2 px-4 ml-1 font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none ">
+              <button onClick={() => setNewUser(newUser)} type="submit" className=" flex-1 py-2 px-4 ml-1 font-medium rounded-md text-white bg-gray-700 hover:bg-gray-600 border focus:outline-none ">
                 Sign Up
               </button>
             </div>
           </form>
           {/* googleSignIn */}
-          <button onClick={GoogleSignIn} className="flex w-full py-2 px-2 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-600 focus:outline-none border ">
+          <button onClick={GoogleSignIn} className="flex w-full py-2 px-2 font-medium rounded-md text-white bg-red-400 hover:bg-red-300 focus:outline-none border ">
             <img className="mx-auto h-6 mr-3 rounded" src={googleIcon} alt="Workflow" /> Google
           </button>
         </div>
       </div>
-
-
-      {/* 
-      <Row className="justify-content-center">
-        <Col md={4} style={cardBody}>
-          <Form onSubmit={handleSubmit}>
-
-            <Row>
-              <Col> <Card.Text className="text-center mb-3">{newUser ? 'Already have account?' : "Don't have account?"}</Card.Text></Col>
-              <Col><Card.Text className="text-center mb-3" onClick={() => setNewUser(!newUser)} style={linkCss} htmlFor="newUser" name="newUser">
-                {newUser ? "Sign in account." : 'Create an account.'} </Card.Text></Col>
-            </Row>
-          </Form>
-
-          <Card.Text style={or}><span style={span}>{newUser ? 'Sign up with' : 'Sign in with'}</span></Card.Text>
-          <Row className="gap-3 text-center">
-            <Col onClick={GoogleSignIn} style={SocialCol} className="btn btn-success"><img src={googleIcon} style={socialBtn} alt="" /> &nbsp; Continue with Google</Col>
-          </Row>
-          <Card.Text style={{ color: "red" }} className="text-center mt-3">{user.error}</Card.Text>
-          {user.success && <Card.Text style={{ color: "green" }} className="text-center mt-3">User {newUser ? 'created' : 'Logged In'}  successfully</Card.Text>}
-        </Col>
-      </Row> */}
-
-
     </div>
   );
 };

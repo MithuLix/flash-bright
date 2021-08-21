@@ -1,6 +1,7 @@
 import './App.css';
 import React, { createContext, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Home from './Components/Home/Home';
 import AppBar from './Components/AppBar/AppBar';
 import Login from './Components/Login/Login';
@@ -36,16 +37,16 @@ function App() {
             <Route path="/login"><Login /></Route>
 
             {/* booking components */}
-            <Route path="/booking/:id"><Booking /></Route>
-            <Route path="/bookingMain"><Booking /></Route>
-            <Route path="/bookingPayment"><BookingPayment /></Route>
-            <Route path='/bookingList'><BookingList /></Route>
+            <PrivateRoute path="/booking/:id"><Booking /></PrivateRoute>
+            <PrivateRoute path="/bookingMain"><Booking /></PrivateRoute>
+            <PrivateRoute path="/bookingPayment"><BookingPayment /></PrivateRoute>
+            <PrivateRoute path='/bookingList'><BookingList /></PrivateRoute>
 
             {/* admin components */}
-            <Route path='/orderList'><OrderList /></Route>
-            <Route path='/addService'><AddService/></Route>
-            <Route path='/manageServices'><ManageServices/></Route>
-            <Route path='/manageServicesCard'><ManageServiceCard/></Route>
+            <PrivateRoute path='/orderList'><OrderList /></PrivateRoute>
+            <PrivateRoute path='/addService'><AddService/></PrivateRoute>
+            <PrivateRoute path='/manageServices'><ManageServices/></PrivateRoute>
+            <PrivateRoute path='/manageServicesCard'><ManageServiceCard/></PrivateRoute>
 
             <Route path="*"><NoMatch /></Route>
           </Switch>
