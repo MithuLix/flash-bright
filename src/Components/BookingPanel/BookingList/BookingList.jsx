@@ -1,8 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
 import BookingListCards from './BookingListCards';
-import './BookingList.css';
-import BookingDrawer from '../BookingDrawer/BookingDrawer';
 import { Link } from 'react-router-dom';
 
 export default function BookingList() {
@@ -18,8 +16,8 @@ export default function BookingList() {
 
 
     return (
-        <div className="container bg-gray-700 rounded p-6 h-screen md:w-2/3 text-center">
-            <h6 className="text-white text-center text-2xl font-medium pb-6"> DEAR, <span className="text-uppercase text-danger">{loggedInUser.name}</span> YOU'VE <span className="text-danger">{bookingLists.length}</span> BOOKINGS.</h6>
+        <div className="container bg-gray-700 rounded p-6 h-auto md:w-2/3 text-center">
+            <h6 className="text-white text-center text-2xl font-medium pb-6"> Dear, <span className="text-red-400">{loggedInUser.name}</span> You've <span className="text-red-400">{bookingLists.length}</span> Bookings.</h6>
             <div class=" flex justify-center items-center">
                 {spinner && <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-white"></div>}
             </div>

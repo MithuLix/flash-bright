@@ -16,7 +16,7 @@ const ServicesCard = (props) => {
                     <Link to={`/booking/${_id}`}>
                         <button className="font-medium bg-gray-700 border hover:bg-gray-600 text-white px-4 py-2 rounded focus:outline-none">Buy</button>
                     </Link>
-                    <Link to={`/more/${_id}`}>
+                    <Link to={`/services/${_id}`}>
                         <button className="font-medium  bg-gray-700 border hover:bg-gray-600  text-white px-4 py-2 rounded focus:outline-none">View Details</button>
                     </Link>
                 </div>

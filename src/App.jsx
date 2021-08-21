@@ -17,6 +17,7 @@ import ManageServices from './Components/AdminPanel/ManageServices/ManageService
 import Booking from './Components/BookingPanel/Booking/Booking';
 import BookingPayment from './Components/BookingPanel/Booking/ProcessPayment/BookingPayment';
 import BookingList from './Components/BookingPanel/BookingList/BookingList';
+import MoreDetails from './Components/Services/MoreDetails';
 export const UserContext = createContext();
 
 
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/"><MainPage /></Route>
             <Route path="/home"><MainPage /></Route>
             <Route path="/services"><Services /></Route>
+            <Route path="/services/:id"><MoreDetails /></Route>
             <Route path="/contact"><Contact /></Route>
             <Route path="/login"><Login /></Route>
 

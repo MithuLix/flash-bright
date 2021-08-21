@@ -3,7 +3,6 @@ import BookingPayment from './ProcessPayment/BookingPayment';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
 import { useParams } from 'react-router-dom';
-import BookingDrawer from '../BookingDrawer/BookingDrawer';
 
 
 export default function Booking() {

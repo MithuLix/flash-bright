@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useStripe, useElements, CardNumberElement, CardCvcElement, CardExpiryElement } from "@stripe/react-stripe-js";
-import { Button, Card, Col, Container, Form, InputGroup, Modal } from "react-bootstrap";
+import { Button, Col, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const useOptions = () => {
