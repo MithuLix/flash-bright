@@ -99,7 +99,7 @@ const Footer = () => {
                                         className=" rounded  block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
                                         placeholder="Email address"
                                     />
-                                    <button type="submit" className="py-2 px-4 mt-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-400 hover:bg-red-500 focus:outline-none"> Subscribe</button>
+                                    <button type="submit" className="py-2 px-4 mt-4 border text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-500 focus:outline-none"> Subscribe</button>
                                 </div>
                             </div>
                             <p className="text-gray-50 sm:text-center xl:text-left">All rights reserved.</p>

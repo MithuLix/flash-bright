@@ -34,7 +34,8 @@ function App() {
             <Route exact path="/"><MainPage /></Route>
             <Route path="/home"><MainPage /></Route>
             <Route path="/services"><Services /></Route>
-            <Route path="/services/:id"><MoreDetails /></Route>
+            <Route path="/moreDetails"><MoreDetails /></Route>
+            <Route path="/moreDetails/:id"><MoreDetails /></Route>
             <Route path="/contact"><Contact /></Route>
             <Route path="/login"><Login /></Route>
 
