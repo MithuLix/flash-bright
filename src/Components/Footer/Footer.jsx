@@ -1,3 +1,4 @@
+import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
@@ -78,13 +79,13 @@ const Footer = () => {
                             <h5 className="text-xl text-red-400 font-bold mb-6 sm:text-center xl:text-left">Stay connected</h5>
                             <div className="flex sm:justify-center xl:justify-start">
                                 <Link to="" className="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 text-gray-50 hover:text-white hover:bg-red-400 ">
-                                    <FontAwesomeIcon icon={faUser} />
+                                    <FontAwesomeIcon icon={faFacebook} />
                                 </Link >
                                 <Link to="" className="w-8 h-8 mx-2 border border-2 border-gray-400 rounded-full text-center py-1 text-gray-50 hover:text-white hover:bg-red-400 ">
-                                    <FontAwesomeIcon icon={faUser} />
+                                    <FontAwesomeIcon icon={faInstagram} />
                                 </Link >
                                 <Link to="" className="w-8 h-8 border border-2 border-gray-400 rounded-full text-center py-1 text-gray-50 hover:text-white hover:bg-red-400 ">
-                                    <FontAwesomeIcon icon={faUser} />
+                                    <FontAwesomeIcon icon={faTwitter} />
                                 </Link >
                             </div>
                             <div className="py-3">

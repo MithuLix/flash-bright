@@ -1,9 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useContext } from 'react'
+import { Fragment, useContext, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
-import { faUser, faUserAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // firebase imported files
@@ -17,14 +17,25 @@ if (firebase.apps.length === 0) { firebase.initializeApp(firebaseConfig) };
 export default function AppBar() {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const user = firebase.auth().currentUser;
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        fetch('https://flash-bright-backend.herokuapp.com/isAdmin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/' },
+            body: JSON.stringify({ email: loggedInUser.email }),
+        })
+            .then(response => response.json())
+            .then(data => setIsAdmin(data))
+    }, [])
 
 
     return (
-        <div style={{backgroundColor: '#485264f7'}}>
+        <div style={{ backgroundColor: '#485264f7' }}>
             <Disclosure as="nav"  >
                 {({ open }) => (
                     <>
-                        <div className="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8 mt-0 fixed w-full z-10 top-0" style={{backgroundColor: '#485264f7'}}>
+                        <div className="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8 mt-0 fixed w-full z-10 top-0" style={{ backgroundColor: '#485264f7' }}>
                             <div className="relative flex items-center justify-between h-16">
                                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                     {/* Mobile menu button*/}
@@ -52,7 +63,7 @@ export default function AppBar() {
                                             <Link to="/home"><p className="text-white  hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Home</p></Link>
                                             <Link to="/services"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Services</p></Link>
                                             <Link to="/bookingList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Bookings</p></Link>
-                                            <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>
+                                            {isAdmin && <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>}
                                             <Link to="/contact"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Contact</p></Link>
                                         </div>
                                     </div>
@@ -87,7 +98,7 @@ export default function AppBar() {
                                 <Link to="/home"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Home</p></Link>
                                 <Link to="/services"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Services</p></Link>
                                 <Link to="/bookingList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Bookings</p></Link>
-                                <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>
+                                {isAdmin && <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>}
                                 <Link to="/contact"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Contact</p></Link>
                             </div>
                         </Disclosure.Panel>
@@ -99,3 +110,5 @@ export default function AppBar() {
         </div>
     )
 }
+
+
