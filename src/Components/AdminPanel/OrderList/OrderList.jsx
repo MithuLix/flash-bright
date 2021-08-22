@@ -26,7 +26,7 @@ export default function OrderList() {
                 <div class="px-4 py-4 w-1/2 overflow-hidden xs:w-full sm:w-full md:ml-12 md:w-1/2 lg:w-1/2 xl:w-1/2">
                 <p className="text-2xl font-bold my-4 text-white" >Order List</p>
                     <div>
-                    <table className="text-dark text-lg bg-gray-300 font-medium rounded w-full justify-center text-center ">
+                    <table className="text-dark  bg-gray-300 font-medium rounded w-full justify-center text-center ">
                             <thead className="bg-gray-400"><tr><th>Name</th> <th>Email ID</th><th>Destination</th><th>Status</th></tr> </thead>
                             <tbody>
                                 {orderLists.map(orderList => <OrderListCard toggle={toggle} setToggle={setToggle} orderList={orderList} key={orderList._id}> </OrderListCard>)}
