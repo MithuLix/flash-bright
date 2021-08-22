@@ -10,6 +10,7 @@ import NoMatch from './Components/NoMatch/NoMatch';
 import Services from './Components/Services/Services';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
+import AdminDashboard from './Components/AdminPanel/AdminDashboard';
 import AddService from './Components/AdminPanel/AddService/AddService';
 import ManageServiceCard from './Components/AdminPanel/ManageServices/ManageServiceCard';
 import OrderList from './Components/AdminPanel/OrderList/OrderList';
@@ -46,6 +47,7 @@ function App() {
             <PrivateRoute path='/bookingList'><BookingList /></PrivateRoute>
 
             {/* admin components */}
+            {/* <Route path='/adminDashboard'><AdminDashboard /></Route> */}
             <PrivateRoute path='/orderList'><OrderList /></PrivateRoute>
             <PrivateRoute path='/addService'><AddService/></PrivateRoute>
             <PrivateRoute path='/manageServices'><ManageServices/></PrivateRoute>

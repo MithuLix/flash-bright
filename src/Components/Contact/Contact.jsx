@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
     return (
-        <div className="container">
+        <div className=" md:container xs:p-4">
             <p className="text-center py-6 pb-12 text-5xl font-bold text-white">Contact Us</p>
             <div className="grid grid-flow-col grid-rows-2 sm:grid-rows-1 sm:grid-cols-2 gap-4">
 
@@ -55,7 +55,7 @@ const Contact = () => {
                     </div>
                 </form>
 
-                <div class="w-full object-cover h-64 lg:w-full  md:h-screen bg-cover bg-center"
+                <div class="w-full object-cover h-64 lg:w-full  md:h-screen bg-cover bg-center xs:mt-24"
                     style={{ backgroundImage: 'url(https://i.ibb.co/x8PhCWt/contact-Svg.png)', marginTop: '-10%'}}>
                 </div>
             </div>

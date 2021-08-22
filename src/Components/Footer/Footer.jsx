@@ -1,5 +1,4 @@
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -7,10 +6,10 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className="bottom-0">
-            <footer className="footer-1 py-8 sm:py-12" style={{backgroundColor: '#485264'}}>
+            <footer className="footer-1 py-8 sm:py-2 " style={{backgroundColor: '#485264'}}>
                 <div className="container mx-auto px-4">
                     <div className="sm:flex sm:flex-wrap sm:-mx-4 md:py-4">
-                        <div className="px-4 sm:w-1/2 md:w-1/4 xl:w-1/6">
+                        <div className="px-4 sm:w-1/4 md:w-1/4 xl:w-1/6">
                             <h5 className="text-xl text-red-400 font-bold mb-6">Features</h5>
                             <ul className="list-none footer-links">
                                 <li className="mb-2">

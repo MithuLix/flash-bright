@@ -17,18 +17,6 @@ if (firebase.apps.length === 0) { firebase.initializeApp(firebaseConfig) };
 export default function AppBar() {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const user = firebase.auth().currentUser;
-    const [isAdmin, setIsAdmin] = useState(false);
-
-    useEffect(() => {
-        fetch('https://flash-bright-backend.herokuapp.com/isAdmin', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/' },
-            body: JSON.stringify({ email: loggedInUser.email }),
-        })
-            .then(response => response.json())
-            .then(data => setIsAdmin(data))
-    }, [])
-
 
     return (
         <div style={{ backgroundColor: '#485264f7' }}>
@@ -63,7 +51,7 @@ export default function AppBar() {
                                             <Link to="/home"><p className="text-white  hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Home</p></Link>
                                             <Link to="/services"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Services</p></Link>
                                             <Link to="/bookingList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Bookings</p></Link>
-                                            {isAdmin && <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>}
+                                            <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>
                                             <Link to="/contact"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Contact</p></Link>
                                         </div>
                                     </div>
@@ -98,7 +86,7 @@ export default function AppBar() {
                                 <Link to="/home"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Home</p></Link>
                                 <Link to="/services"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Services</p></Link>
                                 <Link to="/bookingList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Bookings</p></Link>
-                                {isAdmin && <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>}
+                                <Link to="/orderList"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Admin</p></Link>
                                 <Link to="/contact"><p className="text-white hover:bg-gray-700  px-3 py-2 rounded-md font-medium"> Contact</p></Link>
                             </div>
                         </Disclosure.Panel>

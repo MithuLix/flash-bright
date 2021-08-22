@@ -38,7 +38,7 @@ const titleBtn = {textDecoration: 'inherit', color:"white", backgroundColor:"#4f
 return (
     <Container >
       <Form onSubmit={handleSubmit}>
-        <Card.Text style={txt}>PAY WITH STRIPE METHOD :</Card.Text>
+        <Card.Text className="text-white text-center py-4 font-medium">PAY WITH STRIPE METHOD :</Card.Text>
         <InputGroup className="mb-2">
           <CardNumberElement options={options} />
           <Col className="d-flex">
@@ -46,7 +46,7 @@ return (
             <CardCvcElement options={options}/>
           </Col>
         </InputGroup>
-          <Button className="btn-sm" type="submit" style={titleBtn} disabled={!stripe}>Pay</Button>
+          <button className="font-medium bg-gray-700 border hover:bg-gray-600 text-white px-4 py-2 rounded focus:outline-none my-4" disabled={!stripe}>Pay</button>
       </Form>
 
         <Modal show={modal} onHide={()=>setModal(false)} centered>
@@ -56,7 +56,7 @@ return (
             </Modal.Body>
             <Modal.Footer>
               <Button variant="danger btn-sm" onClick={()=> setModal(false)}>Close</Button>
-              <Link to="/home"><Button variant="secondary btn-sm" >Back to Home</Button></Link>
+              <Link to="/home"><button className="font-medium bg-gray-700 border hover:bg-gray-600 text-white px-4 py-2 rounded focus:outline-none my-4">Back to Home</button></Link>
             </Modal.Footer>
         </Modal>
     </Container>

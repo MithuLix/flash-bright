@@ -12,7 +12,7 @@ const Services = () => {
     }, [])
 
     return (
-        <div className="container">
+        <div className="md:container">
             <p className="text-center py-6 pb-12 text-5xl font-bold text-white">Our Best Services</p>
             <div class=" flex justify-center items-center">
                 {spinner && <div class="animate-spin rounded-full h-32 w-32 border-b-4 border-white"></div>}
