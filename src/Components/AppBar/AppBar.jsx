@@ -1,6 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useContext, useEffect, useState } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Fragment, useContext} from 'react'
+import { Disclosure} from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -40,7 +40,7 @@ export default function AppBar() {
                                     <div className="flex-shrink-0 flex items-center">
                                         <Link to="/home">
                                             <img
-                                                className="block lg:block h-8 w-auto"
+                                                className="block lg:block h-8"
                                                 src="https://i.ibb.co/syLS9zW/logo.png"
                                                 alt="Workflow"
                                             />
@@ -57,26 +57,7 @@ export default function AppBar() {
                                     </div>
                                 </div>
                                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
-                                    {/* Profile dropdown */}
-                                    <Menu as="div" className="ml-3 relative">
-                                        <div>
-                                            <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none">
-                                                <span className="sr-only">Open user menu</span>
-                                                {user ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" /> : <Link to="/login"><FontAwesomeIcon className="text-2xl object-fill w-20  rounded-full bg-gray-200" icon={faUser} /></Link>}
-                                            </Menu.Button>
-                                        </div>
-                                        <Transition
-                                            as={Fragment}
-                                            enter="transition ease-out duration-100"
-                                            enterFrom="transform opacity-0 scale-95"
-                                            enterTo="transform opacity-100 scale-100"
-                                            leave="transition ease-in duration-75"
-                                            leaveFrom="transform opacity-100 scale-100"
-                                            leaveTo="transform opacity-0 scale-95"
-                                        >
-                                        </Transition>
-                                    </Menu>
+                                    {user ? <img className="h-8 w-8 rounded-full" src={user.photoURL} alt="" /> : <Link to="/login"><FontAwesomeIcon className="text-2xl object-fill w-20  rounded-full bg-gray-200" icon={faUser} /></Link>}
                                 </div>
                             </div>
                         </div>
