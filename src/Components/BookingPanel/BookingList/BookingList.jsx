@@ -9,7 +9,7 @@ export default function BookingList() {
     const [spinner, setSpinner] = useState(true);
 
     useEffect(() => {
-        fetch("https://flash-bright-backend.herokuapp.com/getBookingList?email=" + loggedInUser.email)
+        fetch("https://flash-bright-backend-production.up.railway.app/getBookingList?email=" + loggedInUser.email)
             .then(res => res.json())
             .then(data => { setBookingLists(data); setSpinner(false) })
     }, [])

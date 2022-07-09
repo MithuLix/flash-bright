@@ -9,7 +9,7 @@ export default function ManageServiceCard (props) {
     const [modal, setModal] = useState(false);
 
     const handleDelete = id => {
-        fetch(`https://flash-bright-backend.herokuapp.com/deleteService/${_id}`, { method: "DELETE" })
+        fetch(`https://flash-bright-backend-production.up.railway.app/deleteService/${_id}`, { method: "DELETE" })
         .then(res => res.json())
         .then(data => { setModal(true);})};
 

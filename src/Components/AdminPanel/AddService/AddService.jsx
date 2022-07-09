@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import AdminDrawer from '../AdminDrawer/AdminDrawer';
 const axios = require('axios').default;
@@ -24,7 +24,7 @@ export default function AddService() {
     const onSubmit = data => {
         const addService = { title: data.title, price: data.price, imageURL: imageURL, description: data.description }
         if (imageURL) {
-            fetch('https://flash-bright-backend.herokuapp.com/addService', {
+            fetch('https://flash-bright-backend-production.up.railway.app/addService', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(addService)
@@ -60,6 +60,11 @@ export default function AddService() {
                             Save to database
                         </button>
                     </form>
+                                {/* modal */}
+            <Modal show={modal} onHide={() => setModal(false)} centered>
+                <Modal.Body><h6>Services added successfully.</h6></Modal.Body>
+                <Modal.Footer><Button variant="secondary btn-sm" onClick={() => setModal(false)}>Close</Button></Modal.Footer>
+            </Modal>
                 </div>
             </div>
         </div>

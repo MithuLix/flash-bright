@@ -10,7 +10,7 @@
 //     const [isAdmin, setIsAdmin] = useState(false);
 
 //     useEffect(() => {
-//         fetch('https://flash-bright-backend.herokuapp.com/isAdmin', {
+//         fetch('https://flash-bright-backend-production.up.railway.app/isAdmin', {
 //             method: 'POST',
 //             headers: { 'Content-Type': 'application/' },
 //             body: JSON.stringify({ email: loggedInUser.email }),

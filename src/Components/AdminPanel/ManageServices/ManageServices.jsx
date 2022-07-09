@@ -8,7 +8,7 @@ export default function ManageServices() {
     const [spinner, setSpinner] = useState(true);
 
     useEffect(() => {
-        fetch("https://flash-bright-backend.herokuapp.com/getServices")
+        fetch("https://flash-bright-backend-production.up.railway.app/getServices")
             .then(res => res.json())
             .then(data => { setManageService(data); setSpinner(false) })
     }, []);

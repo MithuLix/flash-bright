@@ -14,7 +14,7 @@ export default function Booking() {
     const [booking, setBooking] = useState({});
     const { title, price } = booking;
     useEffect(() => {
-        fetch('https://flash-bright-backend.herokuapp.com/getServices/' + id)
+        fetch('https://flash-bright-backend-production.up.railway.app/getServices/' + id)
             .then(res => res.json())
             .then(data => setBooking(data))
     }, [id])
@@ -22,7 +22,7 @@ export default function Booking() {
     const onSubmit = data => { SetPaymentData(data); };
     const handlePaymentSuccess = paymentId => {
         const orderDetails = { email: loggedInUser.email, title: title, payment: paymentData, status: 'pending', paymentId, orderTime: new Date() }
-        fetch('https://flash-bright-backend.herokuapp.com/newBooking', {
+        fetch('https://flash-bright-backend-production.up.railway.app/newBooking', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderDetails)

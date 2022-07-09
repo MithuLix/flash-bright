@@ -8,7 +8,7 @@ export default function MoreDetails() {
     const [details, setDetails] = useState({});
     const { title, price, description, imageURL } = details;
     useEffect(() => {
-        fetch('https://flash-bright-backend.herokuapp.com/getServices/' + id)
+        fetch('https://flash-bright-backend-production.up.railway.app/getServices/' + id)
             .then(res => res.json())
             .then(data => { setDetails(data); setSpinner(false) })
     }, [id])

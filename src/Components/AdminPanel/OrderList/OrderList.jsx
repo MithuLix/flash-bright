@@ -9,7 +9,7 @@ export default function OrderList() {
     const [spinner, setSpinner] = useState(true);
 
     useEffect(() => {
-        fetch('https://flash-bright-backend.herokuapp.com/allOrders')
+        fetch('https://flash-bright-backend-production.up.railway.app/allOrders')
             .then(res => res.json())
             .then(data => { setOrderLists(data); setSpinner(false) })
     }, [toggle]);

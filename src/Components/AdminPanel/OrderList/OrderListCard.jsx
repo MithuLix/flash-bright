@@ -11,7 +11,7 @@ export default function  OrderListCard ({toggle, setToggle, orderList }) {
     const handleChange =(value) => {setStatusChange(value)}
     
     useEffect(() => {
-        fetch(`https://flash-bright-backend.herokuapp.com/updateOrder/${orderList._id}`, {
+        fetch(`https://flash-bright-backend-production.up.railway.app/updateOrder/${orderList._id}`, {
             method : "PATCH",
             headers: {"Content-Type" : "application/json"},
             body : JSON.stringify({status:statusChange})
